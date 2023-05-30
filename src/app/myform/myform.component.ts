@@ -52,7 +52,7 @@ export class MyformComponent  implements OnInit {
     if(n % 2 === 0){
       return 'red'
     }else{
-      return 'black'
+      return 'white'
     }
   }
 

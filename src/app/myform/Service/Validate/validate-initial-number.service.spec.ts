@@ -22,7 +22,7 @@ describe('ValidateInitialNumberService', () => {
     expect(res).toBe(true)
   })
 
-  fit('Initial number should be in limit: ', () => {
+  fit('Initial number should not be in limit: ', () => {
     let value = 11;
     let limit = 10;
     let res = service.validate_init_number(value, limit);
