@@ -1,0 +1,28 @@
+<form [formGroup]="seriesForm" (ngSubmit)="onSubmit()">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Series</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">N: </ion-label>
+        <ion-input id="first-number" type="number" formControlName="FirstNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Initial: </ion-label>
+        <ion-input id="initial-number" type="number" formControlName="InitialNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Limit: </ion-label>
+        <ion-input id="limit" type="number" formControlName="Limit"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-button type="submit" color="my-color"
+    expand="black" fill="outline" [disabled]="!seriesForm.valid">
+    Submit
+  </ion-button>
+  <ion-card *ngFor="let seria of seriesResults">
+    <p [ngStyle]="{'color': getColor(seria)}">{{seria}}</p>
+  </ion-card>
+</form>
